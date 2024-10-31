@@ -1,0 +1,94 @@
+/* static/style.css */
+.author-card {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: auto; /* Adjust width according to content */
+    max-width: 200px; /* Optional: set a maximum width */
+}
+
+th,td:last-child{
+    text-align: center;
+}
+
+/* Navbar Custom Styles */
+.custom-navbar {
+    background-color: #343a40; /* Dark background for the navbar */
+    padding: 15px;
+}
+
+.custom-navbar-brand {
+    color: #ffffff; /* White brand text */
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.custom-nav-link {
+    color: #ffffff; /* White text for links */
+    margin-right: 20px;
+}
+
+.custom-nav-link:hover {
+    color: #f1c40f; /* Gold hover effect */
+    text-decoration: none;
+}
+
+.custom-toggler {
+    border-color: #f1c40f; /* Gold border for the toggler */
+}
+
+/* Custom Button Styles */
+.custom-button {
+    background-color: #28a745; /* Green background for buttons */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.custom-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    color: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+/* Navbar */
+.custom-navbar {
+    background-color: #343a40;
+}
+
+.custom-navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.custom-nav-link {
+    color: white;
+}
+
+.custom-nav-link:hover {
+    color: #f1c40f;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+/* Error pages */
+.error-message {
+    margin-top: 100px;
+    font-size: 1.5rem;
+}
+
+.error-container {
+    text-align: center;
+    margin-top: 50px;
+}

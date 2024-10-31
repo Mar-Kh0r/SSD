@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Marks Entry - Student System{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white">
+                <h4 class="text-center">{{ 'Edit Student' if edit_data else 'Enter Student Details' }}</h4>
+            </div>
+            <div class="card-body">
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endif %}
+                <form method="POST" action="{{ url_for('marks_entry') }}">
+                    {{ form.hidden_tag() }}  <!-- CSRF protection -->
+                    
+                    <input type="hidden" name="original_roll" value="{{ edit_data.roll if edit_data else '' }}">
+                    
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        {{ form.name(class="form-control", value=edit_data.name if edit_data else '') }}  <!-- Name field -->
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="roll" class="form-label">Roll No</label>
+                            {{ form.roll(class="form-control", value=edit_data.roll if edit_data else '') }}  <!-- Roll field -->
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="marks" class="form-label">Marks</label>
+                            {{ form.marks(class="form-control", value=edit_data.marks if edit_data else '') }}  <!-- Marks field -->
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        {{ form.email(class="form-control", value=edit_data.email if edit_data else '') }}  <!-- Email field -->
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success" name="action" value="{{ 'Save' if edit_data else 'Add' }}">
+                            {{ 'Save' if edit_data else 'Add' }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

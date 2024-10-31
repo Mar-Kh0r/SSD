@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Student System{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Hello! Welcome to the Student Marks System!</h1>
+    <p class="lead">Manage student marks with ease, fun, and zero stress! We take the "work" out of "homework."</p>
+    <hr class="my-4">
+    
+    {% if not session.get('user_id') %}
+    <p>Please login or signup to start managing your student data.</p>
+    <a class="btn custom-button btn-lg" href="/login" role="button">Login</a>
+    <a class="btn custom-button btn-lg" href="/signup" role="button">Signup</a>
+    {% else %}
+    <p>Because why do it the hard way when you can do it the smart way? 😉</p>
+    <a class="btn custom-button btn-lg" href="/marks-entry" role="button">Enter Marks</a>
+    <a class="btn custom-button btn-lg" href="/marks" role="button">View Marks</a>
+    {% endif %}
+</div>
+{% endblock %}
